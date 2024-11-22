@@ -18,7 +18,7 @@ export default NextAuth({
   },
   callbacks: {
     // Customize the redirect logic after sign-in
-    async redirect({ url, baseUrl }) {
+    async redirect() {
       // Always redirect to /csv-mapping after successful Google sign-in
       return "/csv-mapping";
     },
