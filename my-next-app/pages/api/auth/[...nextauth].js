@@ -14,13 +14,13 @@ export default NextAuth({
     }),
   ],
   pages: {
-    signIn: "/auth/signin", // Custom sign-in page
+    signIn: "/signin", // Optionally, you can customize the sign-in page here
   },
   callbacks: {
-    async redirect() {
-      // Redirect users to the CSV Mapping page after login
+    // Customize the redirect logic after sign-in
+    async redirect({ url, baseUrl }) {
+      // Always redirect to /csv-mapping after successful Google sign-in
       return "/csv-mapping";
     },
   },
-  secret: process.env.NEXTAUTH_SECRET,
 });
