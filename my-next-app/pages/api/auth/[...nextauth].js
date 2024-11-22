@@ -17,7 +17,7 @@ export default NextAuth({
     signIn: "/auth/signin", // Custom sign-in page
   },
   callbacks: {
-    async redirect({ url, baseUrl }) {
+    async redirect() {
       // Redirect users to the CSV Mapping page after login
       return "/csv-mapping";
     },

@@ -10,6 +10,7 @@ export default function CsvMapping() {
 
   const handleFileUpload = (e) => {
     const file = e.target.files[0];
+    console.log("session", session);
     if (file) {
       Papa.parse(file, {
         header: hasHeaders,
@@ -21,7 +22,7 @@ export default function CsvMapping() {
 
   const handleMappingSubmit = () => {
     const jsonMapping = {};
-    csvData.forEach((row, index) => {
+    csvData.forEach((row) => {
       Object.keys(row).forEach((column) => {
         jsonMapping[column] = mappedData[column] || row[column];
       });
