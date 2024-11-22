@@ -1,7 +1,10 @@
+import { signIn } from "next-auth/react";
+
 export default function Home() {
   return (
-    <div>
-      <h1>Welcome to My Next.js Application!</h1>
+    <div style={{ textAlign: "center", marginTop: "50px" }}>
+      <h1>Welcome to the CSV Mapping App</h1>
+      <button onClick={() => signIn()}>Get Started</button>
     </div>
   );
 }
